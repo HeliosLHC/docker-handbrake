@@ -83,7 +83,8 @@ WORKDIR /tmp
 RUN \
     add-pkg \
         libstdc++ \
-        gtk+3.0 \
+        gtk4.0 \
+        mesa-dri-gallium \
         libgudev \
         dbus-glib \
         libnotify \
