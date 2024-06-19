@@ -148,8 +148,8 @@ apk --no-cache add \
     curl \
     binutils \
     git \
-    clang15 \
-    llvm15 \
+    clang17 \
+    llvm17 \
     make \
     cmake \
     pkgconf \
@@ -369,6 +369,7 @@ if [ "$(xx-info arch)" = "amd64" ]; then
 
     log "Patching Intel Media SDK..."
     patch -d /tmp/MediaSDK -p1 < "$SCRIPT_DIR"/intel-media-sdk-debug-no-assert.patch
+    patch -d /tmp/MediaSDK -p1 < "$SCRIPT_DIR"/intel-media-sdk-compile-fix.patch
 
     log "Configuring Intel Media SDK..."
     (
@@ -428,7 +429,8 @@ log "Patching HandBrake..."
 if xx-info is-cross; then
     patch -d /tmp/handbrake -p1 < "$SCRIPT_DIR"/cross-compile-fix.patch
 fi
-patch -d /tmp/handbrake -p1 < "$SCRIPT_DIR"/main-window-maximized.patch
+
+patch -d /tmp/handbrake -p1 < "$SCRIPT_DIR"/maximized-window.patch
 
 # Create the meson cross compile config file.
 if xx-info is-cross; then
