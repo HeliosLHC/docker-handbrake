@@ -172,8 +172,8 @@ apk --no-cache add \
     gettext-dev \
     glib-dev \
 
-apk add cargo --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
-apk add cargo-c --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
+apk add cargo --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main --no-cache \
+apk add cargo-c --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community --no-cache \
 
 
 xx-apk --no-cache --no-scripts add \
