@@ -170,10 +170,10 @@ apk --no-cache add \
     nasm \
     meson \
     gettext-dev \
-    glib-dev \
+    glib-dev 
 
-apk add cargo --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main --no-cache \
-apk add cargo-c --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community --no-cache \
+apk --no-cache add cargo --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main
+apk --no-cache add cargo-c --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
 
 
 xx-apk --no-cache --no-scripts add \
