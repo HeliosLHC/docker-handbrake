@@ -144,6 +144,7 @@ fi
 #
 # Install required packages.
 #
+
 apk --no-cache add \
     curl \
     binutils \
@@ -168,10 +169,12 @@ apk --no-cache add \
     bash \
     nasm \
     meson \
-    cargo \
-    cargo-c \
     gettext-dev \
     glib-dev \
+
+apk add cargo --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
+apk add cargo-c --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
+
 
 xx-apk --no-cache --no-scripts add \
     musl-dev \
