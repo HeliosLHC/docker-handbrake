@@ -134,16 +134,3 @@ jobs:
         run: |
           docker buildx imagetools inspect ${{ env.DOCKER_IMAGE_NAME }}:${{ needs.prepare.outputs.version }}
 
-  notification:
-    name: Notification
-    needs: [ prepare, build ]
-    runs-on: ubuntu-20.04
-    if: ${{ always() && needs.prepare.outputs.build_needed == 'yes' }}
-
-    steps:
-      - name: Pushover notification
-        uses: desiderati/github-action-pushover@v1
-        with:
-          job-status: ${{ needs.build.result }}
-          pushover-api-token: ${{ secrets.PUSHOVER_API_TOKEN }}
-          pushover-user-key: ${{ secrets.PUSHOVER_USER_KEY }}
